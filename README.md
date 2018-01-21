@@ -8,10 +8,10 @@ Here is the code for image recognition using OpenCV and AWS Rekognition service 
 - Install Python 2.7.14, https://www.python.org/downloads/
 - Install OpenCV2 with python bindings, http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html
 - Boto3 package, `$ pip install boto3`, https://github.com/boto/boto3
-- Create a AWS S3 Bucket, http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html (Note: The bucket needs open write premissions)
+- Create a AWS S3 Bucket, http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html (Note: The bucket needs open write premissions. Make sure to add the bucket name in the python script)
 - Authenticating to AWS Servers, `$ aws configure`, https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
-- haarcascade_frontalface_default.xml
-- haarcascade_smile.xml
+- haarcascade_frontalface_default.xml, https://github.com/sidagarwal04/ComputerVision-OpenCV-AWSRekognition/blob/master/haarcascade_frontalface_default.xml
+- haarcascade_smile.xml, https://github.com/sidagarwal04/ComputerVision-OpenCV-AWSRekognition/blob/master/haarcascade_smile.xml
 
 # Note: 
 Ubuntu 16.04 actually ships out-of-the-box with both Python 2.7 and Python 3.5 installed. The actual versions are:
