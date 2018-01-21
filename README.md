@@ -1,4 +1,5 @@
 # ComputerVision-OpenCV-AWSRekognition
+Computer Vision on edge using OpenCV and on cloud using AWS Rekognition
 
 # Overview
 Here is the code for image recognition using OpenCV and AWS Rekognition service with input from webcam. OpenCV tracks faces and monitors for smiles, when a smile is detected a picture is saved locally on the computer, sent the image to AWS S3 bucket, then AWS Rekognition Service is invoked to analyze that picture, and the results are sent back to console. We need a webcam to provide video input to the program.  
