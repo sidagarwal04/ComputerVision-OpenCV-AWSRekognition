@@ -5,7 +5,7 @@ import boto3
 
 sys.path.append('/usr/local/lib/python2.7/site-packages/')
 
-Bucket_Name = 'inteliot-aws'
+Bucket_Name = 'Enter AWS S3 Bucket Name Here'
 
 s3 = boto3.resource('s3')
 
