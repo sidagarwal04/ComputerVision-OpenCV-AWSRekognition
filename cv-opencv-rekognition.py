@@ -11,8 +11,10 @@ s3 = boto3.resource('s3')
 
 facePath = "./haarcascade_frontalface_default.xml"
 smilePath = "./haarcascade_smile.xml"
+eyePath = "./haarcascade_eye.xml"
 faceCascade = cv2.CascadeClassifier(facePath)
 smileCascade = cv2.CascadeClassifier(smilePath)
+eyeCascade = cv2.CascadeClassifier(eyePath)
 
 cap = cv2.VideoCapture(0)
 cap.set(3,640)
@@ -34,13 +36,19 @@ while True:
         minNeighbors=8,
         minSize=(55, 55)
     )
+	
     # ---- Draw a rectangle around the faces
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 0, 255), 2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = frame[y:y+h, x:x+w]
-
-        smile = smileCascade.detectMultiScale(
+	
+    # ---- Draw a rectangle around the eyes
+    eyes = eyeCascade.detectMultiScale(roi_gray)
+    for (ex,ey,ew,eh) in eyes:
+    	cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+        
+    smile = smileCascade.detectMultiScale(
             roi_gray,
             scaleFactor= 1.7,
             minNeighbors=22,
